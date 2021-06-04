@@ -1,9 +1,12 @@
 import { Dimensions, StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  HeaderCurveContainer: {
+    height: Dimensions.get("screen").height / 4,
+  },
   HeaderCurve: {
-    backgroundColor: "rgba(219, 191, 98, 0.2)",
-    height: Dimensions.get("screen").height / 3,
+    backgroundColor: "rgba(219, 191, 98, 0.5)",
+    height: "100%",
     paddingHorizontal: 20,
   },
 
