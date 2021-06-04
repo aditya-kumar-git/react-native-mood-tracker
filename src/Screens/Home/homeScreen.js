@@ -45,7 +45,6 @@ export default function HomeScreen(props) {
     );
   };
 
-
   return (
     <View style={styles.Container}>
       <SafeAreaView style={{ flexGrow: 1 }}>
@@ -57,19 +56,22 @@ export default function HomeScreen(props) {
           dataSend={Routes.CreateMood}
           disableButton={false}
         />
+
         {loader ? (
           <View style={styles.LoaderContainer}>
             <ActivityIndicator size="large" color="#000" />
           </View>
         ) : (
-          <FlatList
-            data={records}
-            keyExtractor={(data, index) => {
-              return data.tags[0] + index;
-            }}
-            renderItem={moodList}
-            contentContainerStyle={{ flexGrow: 1 }}
-          />
+          <View style={{ flex: 1 }}>
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              data={records}
+              keyExtractor={(data, index) => {
+                return data.tags[0] + index;
+              }}
+              renderItem={moodList}
+            />
+          </View>
         )}
       </SafeAreaView>
     </View>
