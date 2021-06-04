@@ -32,7 +32,7 @@ export default function ButtonComponent(props) {
               : disabledDataColorButton,
           },
         ]}
-        activeOpacity={0.7}
+        activeOpacity={0.5}
         onPress={!disableButton ? navigate : null}
       >
         <Text style={[styles.ButtonText, { color: dataColorText }]}>

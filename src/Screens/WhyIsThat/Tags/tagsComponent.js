@@ -10,7 +10,7 @@ export default function TagsComponent(props) {
         onPress={() => {
           triggerChange(ele);
         }}
-        activeOpacity={0.7}
+        activeOpacity={0.5}
         style={[
           styles.TagsItemContainer,
           {

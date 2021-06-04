@@ -80,7 +80,10 @@ export default function WhyIsThatScreen(props) {
 
         <View style={styles.Header}>
           <View style={styles.MascotContainer}>
-            <MascotImage />
+            <MascotImage 
+            shirtFill={sliderValue===180? '#63A6DC':
+            sliderValue>180?'rgba(75, 166, 149, 1)':'rgba(247, 187, 181, 1)'}
+            />
           </View>
           <View style={styles.MascotTextContainer}>
             <Text style={styles.MascotText}>Why is that?</Text>

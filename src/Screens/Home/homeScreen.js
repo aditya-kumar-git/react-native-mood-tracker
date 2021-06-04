@@ -38,7 +38,7 @@ export default function HomeScreen(props) {
         onPress={() => {
           props.navigation.navigate(Routes.ShowMood, { data: data.item });
         }}
-        activeOpacity={0.7}
+        activeOpacity={0.5}
       >
         <MoodBlockComponent data={data.item} />
       </TouchableOpacity>

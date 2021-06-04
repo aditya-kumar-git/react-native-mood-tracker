@@ -9,7 +9,7 @@ export default function BackButtonComponent(props) {
     }
   return (
     <TouchableOpacity
-      activeOpacity={0.7}
+      activeOpacity={0.5}
       style={[styles.BackContainer, { backgroundColor: props.circleColor }]}
       onPress={goBack}
     >
