@@ -35,7 +35,7 @@ export default function CreateMoodScreen(props) {
           navigation={props.navigation}
           navigationData={sliderValue}
           dataSend={Routes.WhyIsThat}
-          disableButton={sliderValue === 0 ? true : false}
+          disableButton={sliderValue === 180 ? true : false}
         />
       </SafeAreaView>
     </View>

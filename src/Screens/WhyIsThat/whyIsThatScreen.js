@@ -37,7 +37,7 @@ export default function WhyIsThatScreen(props) {
   }, [tags]);
 
   const sendDataToDataBase = async () => {
-    setloader(true)
+    setloader(true);
     let positiveTags = tags.filter((data) => data.selected);
     let tagArray = positiveTags.map((data) => data.name);
     let date = moment(new Date()).format("DD/MM");
@@ -45,17 +45,20 @@ export default function WhyIsThatScreen(props) {
       date: date,
       notes: notesValue,
       slider: sliderValue,
+      happySad: sliderValue > 180 ? "happy" : "sad",
       tags: tagArray,
     };
-    try {
-      var response = await dataBaseData.doc().set(data);
-      if (response == undefined) {
-        setloader(false)
+
+    await dataBaseData
+      .doc()
+      .set(data)
+      .then(() => {
+        setloader(false);
         props.navigation.navigate(Routes.Home);
-      }
-    } catch (error) {
-      console.log(error);
-    }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const triggerChange = (data) => {
@@ -80,9 +83,14 @@ export default function WhyIsThatScreen(props) {
 
         <View style={styles.Header}>
           <View style={styles.MascotContainer}>
-            <MascotImage 
-            shirtFill={sliderValue===180? '#63A6DC':
-            sliderValue>180?'rgba(75, 166, 149, 1)':'rgba(247, 187, 181, 1)'}
+            <MascotImage
+              shirtFill={
+                sliderValue === 180
+                  ? "#63A6DC"
+                  : sliderValue > 180
+                  ? "rgba(75, 166, 149, 1)"
+                  : "rgba(247, 187, 181, 1)"
+              }
             />
           </View>
           <View style={styles.MascotTextContainer}>
