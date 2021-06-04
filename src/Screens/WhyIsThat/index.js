@@ -1,2 +1,2 @@
-import WhyIsThatScreen from './whyIsThatScreen'
-export default WhyIsThatScreen
+import WhyIsThatScreen from "./whyIsThatScreen";
+export default WhyIsThatScreen;

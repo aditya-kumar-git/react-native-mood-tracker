@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import styles from './styles'
+import styles from "./styles";
 export default function TagsComponent(props) {
-  const {  firstHalf, secondHalf, triggerChange } = props;
+  const { firstHalf, secondHalf, triggerChange } = props;
   const tagsItem = (data) => {
     const ele = data.item;
     return (

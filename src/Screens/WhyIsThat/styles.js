@@ -25,9 +25,9 @@ export default StyleSheet.create({
     height: 80,
     width: 80,
   },
-  LoaderContainer:{
-    justifyContent:'center',
-    alignItems:'center',
-    flex: 1
-  }
+  LoaderContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+  },
 });

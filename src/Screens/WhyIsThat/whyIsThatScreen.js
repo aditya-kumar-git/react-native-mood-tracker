@@ -41,31 +41,29 @@ export default function WhyIsThatScreen(props) {
     let positiveTags = tags.filter((data) => data.selected);
     let tagArray = positiveTags.map((data) => data.name);
     let date = moment(new Date()).format("DD/MM");
-    if(tagArray.length ===0)
-      {
-        alert("Please select a tag")
-    setloader(false);
+    if (tagArray.length === 0) {
+      alert("Please select a tag");
+      setloader(false);
+    } else {
+      let data = {
+        date: date,
+        notes: notesValue,
+        slider: sliderValue,
+        happySad: sliderValue > 180 ? "happy" : "sad",
+        tags: tagArray,
+      };
 
-      }
-    else{
-    let data = {
-      date: date,
-      notes: notesValue,
-      slider: sliderValue,
-      happySad: sliderValue > 180 ? "happy" : "sad",
-      tags: tagArray,
-    };
-
-    await dataBaseData
-      .doc()
-      .set(data)
-      .then(() => {
-        setloader(false);
-        props.navigation.navigate(Routes.Home);
-      })
-      .catch((error) => {
-        console.log(error);
-      });}
+      await dataBaseData
+        .doc()
+        .set(data)
+        .then(() => {
+          setloader(false);
+          props.navigation.navigate(Routes.Home);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   const triggerChange = (data) => {

@@ -1,2 +1,2 @@
-import SliderComponent from './sliderComponent'
-export default SliderComponent
+import SliderComponent from "./sliderComponent";
+export default SliderComponent;

@@ -61,12 +61,12 @@ export default StyleSheet.create({
   NotesContentContainer: {
     backgroundColor: "rgba(251, 244, 227, 1)",
     marginTop: 20,
-    paddingVertical:20,
-    paddingHorizontal:15,
-    borderRadius:20
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    borderRadius: 20,
   },
   NotesContent: {
-    lineHeight:22,
+    lineHeight: 22,
     color: "rgba(23, 23, 23, 1)",
     fontWeight: "500",
   },

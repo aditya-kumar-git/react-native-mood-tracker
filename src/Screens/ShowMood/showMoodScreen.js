@@ -23,10 +23,8 @@ export default function ShowMoodScreen(props) {
 
   return (
     <View style={styles.Container}>
-      <SafeAreaView>
-        <ScrollView
-        showsVerticalScrollIndicator={false}
-        >
+      <SafeAreaView style={{ flexGrow: 1 }}>
+        <ScrollView showsVerticalScrollIndicator={false}>
           {/* HEADER */}
           <View style={styles.HeaderContainer}>
             <Text style={styles.HeaderText}>Mood</Text>

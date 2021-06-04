@@ -1,2 +1,2 @@
-import TagsComponent from './tagsComponent'
-export default TagsComponent
+import TagsComponent from "./tagsComponent";
+export default TagsComponent;

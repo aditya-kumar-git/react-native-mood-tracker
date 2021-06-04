@@ -5,12 +5,11 @@ import styles from "./styles";
 export default function CreateHeader(props) {
   return (
     <View style={styles.HeaderCurve}>
-      <SafeAreaView  >
-          <BackButtonComponent
-            circleColor="white"
-            navigation={props.navigation}
-          />
-
+      <SafeAreaView>
+        <BackButtonComponent
+          circleColor="white"
+          navigation={props.navigation}
+        />
       </SafeAreaView>
       <SafeAreaView style={styles.HeaderContent}>
         <View style={styles.TextBox}>

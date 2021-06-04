@@ -4,9 +4,9 @@ import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function BackButtonComponent(props) {
-    const goBack = () => {
-     props.navigation.goBack()   
-    }
+  const goBack = () => {
+    props.navigation.goBack();
+  };
   return (
     <TouchableOpacity
       activeOpacity={0.5}

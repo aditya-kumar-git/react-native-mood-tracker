@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TextInput } from "react-native";
 import styles from "./styles";
 export default function NotesComponent(props) {
-  let { notesValue,changeNotesValue } = props;
+  let { notesValue, changeNotesValue } = props;
   return (
     <View style={styles.NotesConstainer}>
       <Text style={styles.NotesText}>Notes:</Text>
@@ -13,7 +13,7 @@ export default function NotesComponent(props) {
           multiline={true}
           value={notesValue}
           onChangeText={(data) => {
-            changeNotesValue(data)
+            changeNotesValue(data);
           }}
         />
       </View>

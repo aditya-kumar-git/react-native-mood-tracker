@@ -1,2 +1,2 @@
-import NotesComponent from './notesComponent'
-export default NotesComponent
+import NotesComponent from "./notesComponent";
+export default NotesComponent;

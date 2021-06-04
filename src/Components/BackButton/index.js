@@ -1,2 +1,2 @@
-import BackButtonComponent from './backButtonComponent'
-export default BackButtonComponent
+import BackButtonComponent from "./backButtonComponent";
+export default BackButtonComponent;

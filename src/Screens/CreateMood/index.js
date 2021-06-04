@@ -1,2 +1,2 @@
-import CreateMoodScreen from './createMoodScreen'
-export default CreateMoodScreen
+import CreateMoodScreen from "./createMoodScreen";
+export default CreateMoodScreen;

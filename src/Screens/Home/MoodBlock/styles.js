@@ -30,7 +30,8 @@ export default StyleSheet.create({
   },
   Dates: {
     marginTop: 5,
-    color: 'grey',fontSize:12
+    color: "grey",
+    fontSize: 12,
   },
   FaceDateContainer: {
     justifyContent: "center",

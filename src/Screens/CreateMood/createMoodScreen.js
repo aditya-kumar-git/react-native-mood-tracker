@@ -18,9 +18,14 @@ export default function CreateMoodScreen(props) {
     <View style={styles.Conainer}>
       <CreateHeader navigation={props.navigation} />
       <View style={styles.MascotConainer}>
-        <MascotImage 
-        shirtFill={sliderValue===180? '#63A6DC':
-          sliderValue>180?'rgba(75, 166, 149, 1)':'rgba(247, 187, 181, 1)'}
+        <MascotImage
+          shirtFill={
+            sliderValue === 180
+              ? "#63A6DC"
+              : sliderValue > 180
+              ? "rgba(75, 166, 149, 1)"
+              : "rgba(247, 187, 181, 1)"
+          }
         />
       </View>
       <View style={styles.sliderContainer}>

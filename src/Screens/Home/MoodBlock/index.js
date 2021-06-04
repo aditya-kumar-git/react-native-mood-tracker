@@ -1,2 +1,2 @@
-import MoodBlockComponent from './moodBlockComponent'
-export default MoodBlockComponent
+import MoodBlockComponent from "./moodBlockComponent";
+export default MoodBlockComponent;
