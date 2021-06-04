@@ -127,9 +127,6 @@ const CircularSlider = ({
     );
   };
 
-console.log(" ");
-console.log(endCoord);
-console.log(" ");
 
   return (
     <Svg width={width} height={width}>
@@ -166,6 +163,7 @@ console.log(" ");
           cx={bR}
           cy={bR}
           fill={
+            angle===180? '#63A6DC':
             angle > 180 ? "rgba(75, 166, 149, 1)" : "rgba(247, 187, 181, 1)"
           }
           {...panResponder.panHandlers}

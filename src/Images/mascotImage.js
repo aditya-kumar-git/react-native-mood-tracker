@@ -1,7 +1,7 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function MascotImage() {
+export default function MascotImage({shirtFill='#63A6DC'}) {
   return (
     <Svg
       width="100%"
@@ -32,7 +32,7 @@ export default function MascotImage() {
       />
       <Path
         d="M35.5004 81.7167C46.4042 81.7167 56.127 76.667 62.4654 68.7794C62.5107 67.9609 62.5362 67.2302 62.5362 66.6355C62.5362 59.8383 59.4576 53.6982 54.507 49.3083H17.6068C12.6561 53.6982 9.57758 59.8383 9.57758 66.6355C9.57758 67.5503 9.62573 68.7823 9.72202 70.1785C16.0547 77.2589 25.2564 81.7167 35.5004 81.7167Z"
-        fill="#63A6DC"
+        fill={shirtFill}
       />
       <Path
         fill-rule="evenodd"
@@ -42,7 +42,7 @@ export default function MascotImage() {
       />
       <Path
         d="M58.1434 54.9218H12.7495C9.64824 54.9218 7.13611 52.4097 7.13611 49.3085C7.13611 46.2073 9.64824 43.6951 12.7495 43.6951H58.1405C61.2418 43.6951 63.7539 46.2073 63.7539 49.3085C63.7567 52.4097 61.2418 54.9218 58.1434 54.9218Z"
-        fill="#63A6DC"
+        fill={shirtFill}
       />
       <Path
         fill-rule="evenodd"
@@ -52,7 +52,7 @@ export default function MascotImage() {
       />
       <Path
         d="M56.4442 52.4888H18.8529V68.5896H56.4442V52.4888Z"
-        fill="#63A6DC"
+        fill={shirtFill}
       />
       <Path
         fill-rule="evenodd"
@@ -144,7 +144,7 @@ export default function MascotImage() {
       />
       <Path
         d="M36.4714 45.4721C38.9428 45.4721 40.9462 43.4686 40.9462 40.9972C40.9462 38.5259 38.9428 36.5224 36.4714 36.5224C34 36.5224 31.9966 38.5259 31.9966 40.9972C31.9966 43.4686 34 45.4721 36.4714 45.4721Z"
-        fill="#63A6DC"
+        fill={shirtFill}
       />
       <Path
         fill-rule="evenodd"
