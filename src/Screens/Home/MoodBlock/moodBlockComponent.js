@@ -3,8 +3,8 @@ import { View, Text } from "react-native";
 import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 import { FlatList } from "react-native-gesture-handler";
-import HappySmile from "Images/happySmile";
-import SadSmile from "Images/sadSmile";
+import HappySmile from "Images/happy";
+import SadSmile from "Images/sad";
 
 export default function MoodBlockComponent(props) {
   const tagLists = (data) => {

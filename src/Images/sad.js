@@ -1,7 +1,7 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function SadSmile() {
+export default function Sad() {
   return (
     <Svg
       width="100%"

@@ -1,9 +1,9 @@
 import React, { FC, useState, useRef, useCallback } from "react";
 import { PanResponder, Dimensions, View, StyleSheet } from "react-native";
 import Svg, { Path, Circle, G, Text } from "react-native-svg";
-import HappySmile from "Images/happySmile";
-import SadSmile from "Images/sadSmile";
-import { Ionicons } from "@expo/vector-icons";
+import Happy from "Images/happy";
+import Sad from "Images/sad";
+import Neutral from "Images/neutral";
 
 const CircularSlider = ({
   btnRadius = 40,
@@ -114,25 +114,28 @@ const CircularSlider = ({
           strokeWidth={dialWidth + 4}
           strokeLinecap="round"
           fill="none"
-          d={`M${startCoord.x} ${startCoord.y} A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
+          d={`M${startCoord.x} ${
+            startCoord.y
+          } A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
         />
         <Path
           stroke={strokeColor}
           strokeWidth={dialWidth}
           strokeLinecap="round"
           fill="none"
-          d={`M${startCoord.x} ${startCoord.y} A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
+          d={`M${startCoord.x} ${
+            startCoord.y
+          } A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
         />
       </>
     );
   };
 
-
   return (
     <Svg width={width} height={width}>
       <View style={styles.svgContainer}>
         <View style={styles.smileContainer}>
-          {angle < 180 ? <SadSmile /> : <HappySmile />}
+          {angle === 180 ? <Neutral /> : angle < 180 ? <Sad /> : <Happy />}
         </View>
       </View>
 
@@ -163,8 +166,11 @@ const CircularSlider = ({
           cx={bR}
           cy={bR}
           fill={
-            angle===180? '#63A6DC':
-            angle > 180 ? "rgba(75, 166, 149, 1)" : "rgba(247, 187, 181, 1)"
+            angle === 180
+              ? "#63A6DC"
+              : angle > 180
+              ? "rgba(75, 166, 149, 1)"
+              : "rgba(247, 187, 181, 1)"
           }
           {...panResponder.panHandlers}
         />
