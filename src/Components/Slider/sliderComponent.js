@@ -1,17 +1,19 @@
 import React, { FC, useState, useRef, useCallback } from "react";
-import { PanResponder, Dimensions } from "react-native";
+import { PanResponder, Dimensions, View, StyleSheet } from "react-native";
 import Svg, { Path, Circle, G, Text } from "react-native-svg";
+import HappySmile from "Images/happySmile";
+import SadSmile from "Images/sadSmile";
+import { Ionicons } from "@expo/vector-icons";
 
 const CircularSlider = ({
-  btnRadius = 35,
+  btnRadius = 40,
   dialRadius = 130,
-  dialWidth = 5,
-  meterColor = "#0cd",
-  textColor = "#fff",
+  dialWidth = 25,
+  textColor = "#000",
   fillColor = "none",
-  strokeColor = "red",
-  strokeWidth = 12,
-  textSize = 10,
+  strokeColor = "rgba(251, 244, 227, 1)",
+  strokeWidth = 25,
+  textSize = 25,
   value = 180,
   min = 0,
   max = 359,
@@ -77,49 +79,127 @@ const CircularSlider = ({
   const width = (dialRadius + btnRadius) * 2;
   const bR = btnRadius;
   const dR = dialRadius;
-  const startCoord = polarToCartesian(0);
+  const startCoord = polarToCartesian(180);
   var endCoord = polarToCartesian(angle);
+
+  const RightOne = () => {
+    return (
+      <>
+        <Path
+          stroke={"black"}
+          strokeLinecap="round"
+          strokeWidth={dialWidth + 4}
+          fill="none"
+          d={`M${startCoord.x} ${
+            startCoord.y
+          } A ${dR} ${dR} 0 0 0 ${236} ${58}`}
+        />
+        <Path
+          stroke={strokeColor}
+          strokeLinecap="round"
+          strokeWidth={dialWidth}
+          fill="none"
+          d={`M${startCoord.x} ${
+            startCoord.y
+          } A ${dR} ${dR} 0 0 0 ${236} ${58}`}
+        />
+      </>
+    );
+  };
+  const LeftOne = () => {
+    return (
+      <>
+        <Path
+          stroke={"black"}
+          strokeWidth={dialWidth + 4}
+          strokeLinecap="round"
+          fill="none"
+          d={`M${startCoord.x} ${startCoord.y} A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
+        />
+        <Path
+          stroke={strokeColor}
+          strokeWidth={dialWidth}
+          strokeLinecap="round"
+          fill="none"
+          d={`M${startCoord.x} ${startCoord.y} A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
+        />
+      </>
+    );
+  };
+
+console.log(" ");
+console.log(endCoord);
+console.log(" ");
 
   return (
     <Svg width={width} height={width}>
-      <Circle
-        r={dR}
-        cx={width / 2}
-        cy={width / 2}
-        stroke={strokeColor}
-        strokeWidth={strokeWidth}
-        fill={fillColor}
-      />
+      <View style={styles.svgContainer}>
+        <View style={styles.smileContainer}>
+          {angle < 180 ? <SadSmile /> : <HappySmile />}
+        </View>
+      </View>
+
+      {angle > 180 ? (
+        <>
+          <LeftOne />
+          <RightOne />
+        </>
+      ) : (
+        <>
+          <RightOne />
+          <LeftOne />
+        </>
+      )}
 
       <Path
-        stroke={meterColor}
+        stroke={
+          angle > 180 ? "rgba(75, 166, 149, 1)" : "rgba(247, 187, 181, 1)"
+        }
         strokeWidth={dialWidth}
         fill="none"
-        d={`M${startCoord.x} ${startCoord.y} A ${dR} ${dR} 0 ${
-          angle > 180 ? 1 : 0
-        } 1 ${endCoord.x} ${endCoord.y}`}
+        d={`M${startCoord.x} ${startCoord.y} A ${dR} ${dR} 0 ${0} 
+        ${angle > 180 ? 1 : 0} ${endCoord.x} ${endCoord.y}`}
       />
-
       <G x={endCoord.x - bR} y={endCoord.y - bR}>
         <Circle
           r={bR}
           cx={bR}
           cy={bR}
-          fill={meterColor}
+          fill={
+            angle > 180 ? "rgba(75, 166, 149, 1)" : "rgba(247, 187, 181, 1)"
+          }
           {...panResponder.panHandlers}
         />
         <Text
           x={bR}
-          y={bR + textSize / 2}
+          y={bR}
           fontSize={textSize}
           fill={textColor}
+          fontWeight="bold"
           textAnchor="middle"
         >
-          {angle}
+          {"< >"}
         </Text>
       </G>
     </Svg>
   );
 };
+
+const styles = StyleSheet.create({
+  svgContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: 340,
+    width: 340,
+  },
+  smileContainer: {
+    backgroundColor: "rgba(251, 244, 227, 1)",
+    height: 100,
+    width: 100,
+    borderRadius: 100,
+    borderWidth: 2,
+    borderColor: "#000",
+  },
+});
 
 export default React.memo(CircularSlider);

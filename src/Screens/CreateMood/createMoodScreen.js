@@ -10,7 +10,9 @@ export default function CreateMoodScreen(props) {
   const [sliderValue, setsliderValue] = useState(180);
 
   let cangeSliderValue = (data) => {
-    setsliderValue(data);
+    if (data > 30 && data < 330) {
+      setsliderValue(data);
+    }
   };
   return (
     <View style={styles.Conainer}>
@@ -22,7 +24,6 @@ export default function CreateMoodScreen(props) {
         <SliderComponent value={sliderValue} onValueChange={cangeSliderValue} />
       </View>
       <SafeAreaView>
-        <Text>{sliderValue}</Text>
         <ButtonComponent
           dataText="Next"
           dataColorButton="rgba(99, 166, 220, 1)"
