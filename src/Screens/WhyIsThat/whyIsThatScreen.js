@@ -1,5 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, SafeAreaView, ActivityIndicator } from "react-native";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  ScrollView,
+  Keyboard,
+  Platform,
+} from "react-native";
 import styles from "./styles";
 import MascotImage from "Images/mascotImage";
 import { tagsList } from "./tagElements";
@@ -77,68 +86,87 @@ export default function WhyIsThatScreen(props) {
     settags(change);
   };
 
+  useEffect(() => {
+    Keyboard.addListener("keyboardDidShow", () => {
+      scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+    });
+    Keyboard.addListener("keyboardDidHide", () => {});
+  }, []);
+
   const notesChange = (data) => {
     setnotesValue(data);
   };
+  const scrollViewRef = useRef();
 
   return (
-    <View style={styles.Conainer}>
-      <SafeAreaView style={{ flexGrow: 1 }}>
-        {/* Header */}
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : ""}
+    >
+      <ScrollView
+        contentContainerStyle={{ flex: 1 }}
+        bounces={false}
+        ref={scrollViewRef}
+      >
+        <View style={styles.Conainer}>
+          <SafeAreaView style={{ flexGrow: 1 }}>
+            {/* Header */}
 
-        <View style={styles.Header}>
-          <View style={styles.MascotContainer}>
-            <MascotImage
-              shirtFill={
-                sliderValue === 180
-                  ? "#63A6DC"
-                  : sliderValue > 180
-                  ? "rgba(75, 166, 149, 1)"
-                  : "rgba(247, 187, 181, 1)"
-              }
-            />
-          </View>
-          <View style={styles.MascotTextContainer}>
-            <Text style={styles.MascotText}>Why is that?</Text>
-          </View>
-        </View>
-
-        {loader ? (
-          <View style={styles.LoaderContainer}>
-            <ActivityIndicator size="large" color="#000" />
-          </View>
-        ) : (
-          <>
-            {/* Tags */}
-            <TagsComponent
-              styles={styles}
-              firstHalf={firstHalf}
-              secondHalf={secondHalf}
-              triggerChange={triggerChange}
-            />
-
-            {/* Notes */}
-
-            <View style={{ flexGrow: 1 }}>
-              <NotesComponent
-                styles={styles}
-                notesValue={notesValue}
-                changeNotesValue={notesChange}
-              />
+            <View style={styles.Header}>
+              <View style={styles.MascotContainer}>
+                <MascotImage
+                  shirtFill={
+                    sliderValue === 180
+                      ? "#63A6DC"
+                      : sliderValue > 180
+                      ? "rgba(75, 166, 149, 1)"
+                      : "rgba(247, 187, 181, 1)"
+                  }
+                />
+              </View>
+              <View style={styles.MascotTextContainer}>
+                <Text style={styles.MascotText}>Why is that?</Text>
+              </View>
             </View>
 
-            <ButtonComponent
-              dataText="Save"
-              dataColorButton="rgba(99, 166, 220, 1)"
-              dataColorText="#fff"
-              navigation={props.navigation}
-              dataSend={Routes.WhyIsThat}
-              dontNavigate
-              runThis={sendDataToDataBase}
-            />
-          </>
-        )}
-      </SafeAreaView>
-    </View>
+            {loader ? (
+              <View style={styles.LoaderContainer}>
+                <ActivityIndicator size="large" color="#000" />
+              </View>
+            ) : (
+              <>
+                {/* Tags */}
+                <TagsComponent
+                  styles={styles}
+                  firstHalf={firstHalf}
+                  secondHalf={secondHalf}
+                  triggerChange={triggerChange}
+                />
+
+                {/* Notes */}
+
+                <View style={{ flexGrow: 1 }}>
+                  <NotesComponent
+                    styles={styles}
+                    notesValue={notesValue}
+                    changeNotesValue={notesChange}
+                  />
+                </View>
+
+                <ButtonComponent
+                  dataText="Save"
+                  dataColorButton="rgba(99, 166, 220, 1)"
+                  dataColorText="#fff"
+                  navigation={props.navigation}
+                  dataSend={Routes.WhyIsThat}
+                  dontNavigate
+                  runThis={sendDataToDataBase}
+                />
+              </>
+            )}
+          </SafeAreaView>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }

@@ -6,16 +6,16 @@ export default StyleSheet.create({
     color: "grey",
   },
   NotesConstainer: {
-    marginTop: 20,
+    marginTop: 10,
   },
   TextBoxContainer: {
     marginTop: 20,
   },
   TextBox: {
     backgroundColor: "rgba(251, 244, 227, 1)",
-    borderRadius: 20,
+    borderRadius: 16,
     fontWeight: "500",
-    height: 100,
-    padding: 20,
+    height: 80,
+    paddingHorizontal: 20,
   },
 });

@@ -6,7 +6,7 @@ export default StyleSheet.create({
     color: "grey",
   },
   TagsContainer: {
-    marginTop: 20,
+    marginTop: 10,
   },
   TagsItemContainer: {
     marginHorizontal: 5,
@@ -21,6 +21,6 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     minWidth: "100%",
-    marginVertical: 10,
+    marginTop: 10,
   },
 });
