@@ -19,7 +19,7 @@ const CircularSlider = ({
   max = 359,
   xCenter = Dimensions.get("window").width / 2,
   yCenter = Dimensions.get("window").height / 2,
-  onValueChange,
+  onValueChange = (x) => x,
 }) => {
   let angle = value;
 
