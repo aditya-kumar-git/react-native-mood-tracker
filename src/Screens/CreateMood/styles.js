@@ -10,7 +10,7 @@ export default StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: -80,
+    marginTop: -90,
   },
   sliderContainer: {
     flex: 1,

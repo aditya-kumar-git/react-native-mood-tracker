@@ -76,7 +76,7 @@ const CircularSlider = ({
     [dialRadius, btnRadius]
   );
 
-  const width = (dialRadius + btnRadius) * 2;
+  const width = (dialRadius + btnRadius + 2) * 2;
   const bR = btnRadius;
   const dR = dialRadius;
   const startCoord = polarToCartesian(180);
@@ -161,6 +161,7 @@ const CircularSlider = ({
         ${angle > 180 ? 1 : 0} ${endCoord.x} ${endCoord.y}`}
       />
       <G x={endCoord.x - bR} y={endCoord.y - bR}>
+        <Circle r={bR + 2} cx={bR} cy={bR} fill="#000" />
         <Circle
           r={bR}
           cx={bR}
@@ -175,12 +176,12 @@ const CircularSlider = ({
           {...panResponder.panHandlers}
         />
         <Text
-          x={bR}
-          y={bR}
+          x={bR - 17}
+          y={bR + 5}
           fontSize={textSize}
           fill={textColor}
           fontWeight="bold"
-          textAnchor="middle"
+          // textAnchor="middle"
         >
           {"< >"}
         </Text>

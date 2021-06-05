@@ -5,7 +5,7 @@ export default StyleSheet.create({
     height: Dimensions.get("screen").height / 4,
   },
   HeaderCurve: {
-    backgroundColor: "rgba(219, 191, 98, 0.5)",
+    backgroundColor: "rgba(219, 191, 98, 0.3)",
     height: "100%",
     paddingHorizontal: 20,
   },
