@@ -106,7 +106,7 @@ export default function WhyIsThatScreen(props) {
         ref={scrollViewRef}
       >
         <View style={styles.Conainer}>
-          <SafeAreaView style={{ flexGrow: 1,paddingTop:25 }}>
+          <SafeAreaView style={{ flexGrow: 1, paddingTop: 25 }}>
             {/* Header */}
 
             <View style={styles.Header}>

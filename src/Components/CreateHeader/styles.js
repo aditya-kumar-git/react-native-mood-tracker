@@ -8,15 +8,15 @@ export default StyleSheet.create({
     backgroundColor: "rgba(219, 191, 98, 0.3)",
     height: "100%",
     paddingHorizontal: 20,
-    paddingTop:30 
+    paddingTop: 30,
   },
 
   TextboxTriangle: {
-    fontSize:24 ,
-    color:"white",
-    marginTop:-12,
-    marginLeft:50,
-    transform: [{ rotate: '-90deg'}]
+    fontSize: 24,
+    color: "white",
+    marginTop: -12,
+    marginLeft: 50,
+    transform: [{ rotate: "-90deg" }],
   },
   HeaderContent: {
     justifyContent: "center",

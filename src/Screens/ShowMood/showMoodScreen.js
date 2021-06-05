@@ -20,7 +20,7 @@ export default function ShowMoodScreen(props) {
 
   return (
     <View style={styles.Container}>
-      <SafeAreaView style={{ flexGrow: 1,paddingVertical:15 }}>
+      <SafeAreaView style={{ flexGrow: 1, paddingVertical: 15 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           {/* HEADER */}
           <View style={styles.HeaderContainer}>
