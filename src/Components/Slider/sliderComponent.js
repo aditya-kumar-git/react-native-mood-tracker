@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
   svgContainer: {
     justifyContent: "center",
     alignItems: "center",
-    height: 340,
-    width: 340,
+    height: 330,
+    width: 330,
   },
   smileContainer: {
     backgroundColor: "rgba(251, 244, 227, 1)",
