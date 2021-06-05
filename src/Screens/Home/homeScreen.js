@@ -47,7 +47,7 @@ export default function HomeScreen(props) {
 
   return (
     <View style={styles.Container}>
-      <SafeAreaView style={{ flexGrow: 1 }}>
+      <SafeAreaView style={{ flexGrow: 1,paddingTop:15  }}>
         <ButtonComponent
           dataText="+ Add a Record"
           dataColorButton="#FFE687"

@@ -20,7 +20,6 @@ import Routes from "Routes";
 import moment from "moment";
 import { AntDesign } from "@expo/vector-icons";
 
-
 export default function WhyIsThatScreen(props) {
   let dataBaseData = firebase.firestore().collection("moods");
 
@@ -32,6 +31,9 @@ export default function WhyIsThatScreen(props) {
   const [loader, setloader] = useState(false);
 
   useEffect(() => {
+    Keyboard.addListener("keyboardDidShow", () => {
+      scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+    });
     settags(tagsList);
     setsliderValue(props.route.params.sliderValue);
   }, []);
@@ -88,13 +90,6 @@ export default function WhyIsThatScreen(props) {
     settags(change);
   };
 
-  useEffect(() => {
-    Keyboard.addListener("keyboardDidShow", () => {
-      scrollViewRef.current?.scrollTo({ y: 0, animated: true });
-    });
-    Keyboard.addListener("keyboardDidHide", () => {});
-  }, []);
-
   const notesChange = (data) => {
     setnotesValue(data);
   };
@@ -111,7 +106,7 @@ export default function WhyIsThatScreen(props) {
         ref={scrollViewRef}
       >
         <View style={styles.Conainer}>
-          <SafeAreaView style={{ flexGrow: 1 }}>
+          <SafeAreaView style={{ flexGrow: 1,paddingTop:25 }}>
             {/* Header */}
 
             <View style={styles.Header}>

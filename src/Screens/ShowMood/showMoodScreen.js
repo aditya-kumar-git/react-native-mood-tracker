@@ -2,14 +2,11 @@ import BackButtonComponent from "Components/BackButton";
 import SliderComponent from "Components/Slider";
 import React, { useEffect, useState } from "react";
 import { View, Text, SafeAreaView, FlatList, ScrollView } from "react-native";
-import { tagsList } from "Screens/WhyIsThat/tagElements";
 import styles from "./styles";
 export default function ShowMoodScreen(props) {
   const [moodData, setmoodData] = useState([]);
-  const [tags, settags] = useState([]);
   useEffect(() => {
     setmoodData(props.route.params.data);
-    settags(tagsList);
   }, []);
 
   const tagsItem = (data) => {
@@ -23,7 +20,7 @@ export default function ShowMoodScreen(props) {
 
   return (
     <View style={styles.Container}>
-      <SafeAreaView style={{ flexGrow: 1 }}>
+      <SafeAreaView style={{ flexGrow: 1,paddingVertical:15 }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           {/* HEADER */}
           <View style={styles.HeaderContainer}>

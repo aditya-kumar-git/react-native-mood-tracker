@@ -6,7 +6,7 @@ import Sad from "Images/sad";
 import Neutral from "Images/neutral";
 
 const CircularSlider = ({
-  btnRadius = 40,
+  btnRadius = 35,
   dialRadius = 130,
   dialWidth = 25,
   textColor = "#000",
@@ -92,7 +92,7 @@ const CircularSlider = ({
           fill="none"
           d={`M${startCoord.x} ${
             startCoord.y
-          } A ${dR} ${dR} 0 0 0 ${236} ${58}`}
+          } A ${dR} ${dR} 0 0 0 ${231.9} ${53.5}`}
         />
         <Path
           stroke={strokeColor}
@@ -101,7 +101,7 @@ const CircularSlider = ({
           fill="none"
           d={`M${startCoord.x} ${
             startCoord.y
-          } A ${dR} ${dR} 0 0 0 ${236} ${58}`}
+          } A ${dR} ${dR} 0 0 0 ${231.9} ${53.5}`}
         />
       </>
     );
@@ -116,7 +116,7 @@ const CircularSlider = ({
           fill="none"
           d={`M${startCoord.x} ${
             startCoord.y
-          } A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
+          } A ${dR} ${dR} 0 0 1 ${88.5} ${59.8}`}
         />
         <Path
           stroke={strokeColor}
@@ -125,12 +125,15 @@ const CircularSlider = ({
           fill="none"
           d={`M${startCoord.x} ${
             startCoord.y
-          } A ${dR} ${dR} 0 0 1 ${99} ${60.97}`}
+          } A ${dR} ${dR} 0 0 1 ${88.5} ${59.8}`}
         />
       </>
     );
   };
 
+  console.log(" ");
+  console.log(endCoord);
+  console.log(" ");
   return (
     <Svg width={width} height={width}>
       <View style={styles.svgContainer}>

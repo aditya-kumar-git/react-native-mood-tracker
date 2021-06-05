@@ -8,6 +8,7 @@ export default StyleSheet.create({
     backgroundColor: "rgba(219, 191, 98, 0.3)",
     height: "100%",
     paddingHorizontal: 20,
+    paddingTop:30 
   },
 
   TextboxTriangle: {
