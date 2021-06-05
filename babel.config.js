@@ -9,7 +9,6 @@ module.exports = function (api) {
           alias: {
             Screens: "./src/Screens",
             Components: "./src/Components",
-            Redux: "./src/Redux",
             Routes: "./src/Routes.js",
             Images: "./src/Images",
             FireBase: "./src/FireBase",
