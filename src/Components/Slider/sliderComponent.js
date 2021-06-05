@@ -131,9 +131,6 @@ const CircularSlider = ({
     );
   };
 
-  console.log(" ");
-  console.log(endCoord);
-  console.log(" ");
   return (
     <Svg width={width} height={width}>
       <View style={styles.svgContainer}>
