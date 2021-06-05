@@ -21,6 +21,13 @@ export default StyleSheet.create({
     paddingVertical: 15,
     marginLeft: 10,
   },
+  TextboxTriangle: {
+    fontSize: 26,
+    color: "rgba(251, 244, 227, 1)",
+    marginRight: -23,
+    marginBottom: 10,
+    transform: [{ rotate: "75deg" }],
+  },
   MascotContainer: {
     height: 80,
     width: 80,

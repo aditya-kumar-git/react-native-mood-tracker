@@ -10,6 +10,13 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
   },
 
+  TextboxTriangle: {
+    fontSize:24 ,
+    color:"white",
+    marginTop:-12,
+    marginLeft:50,
+    transform: [{ rotate: '-90deg'}]
+  },
   HeaderContent: {
     justifyContent: "center",
     alignItems: "center",

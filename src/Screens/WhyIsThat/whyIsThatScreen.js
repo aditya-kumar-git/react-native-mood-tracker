@@ -18,6 +18,8 @@ import NotesComponent from "./Notes";
 import firebase from "../../FireBase/fireBase";
 import Routes from "Routes";
 import moment from "moment";
+import { AntDesign } from "@expo/vector-icons";
+
 
 export default function WhyIsThatScreen(props) {
   let dataBaseData = firebase.firestore().collection("moods");
@@ -124,6 +126,7 @@ export default function WhyIsThatScreen(props) {
                   }
                 />
               </View>
+              <AntDesign name="caretdown" style={styles.TextboxTriangle} />
               <View style={styles.MascotTextContainer}>
                 <Text style={styles.MascotText}>Why is that?</Text>
               </View>
